@@ -28,12 +28,39 @@
     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo">
 </div>
     <nav>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+
+    <div class="dropdown">
+        <a href="#">About Us ▾</a>
+        <div class="dropdown-content">
+            <a href="#">About Company</a>
+            <a href="#">Quality & Safety</a>
+            <a href="#">Board Members</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+            <a href="#">Services</a>
+            <a href="#">Ongoing Projects</a>
+            <a href="#">Completed Projects</a>
+        </div>
+    </div>
+
+    <a href="#">Careers</a>
+    <a href="#">Gallery</a>
+
+    <div class="dropdown">
+        <a href="#">Investors ▾</a>
+        <div class="dropdown-content">
+            <a href="#">Investor Info</a>
+            <a href="#">Disclosures</a>
+        </div>
+    </div>
+
+    <a href="#contact">Contact Us</a>
+
+</nav>
 </header>
 
 <!-- HERO SLIDER -->
@@ -134,8 +161,45 @@
 
 </section>
 
-<footer>
-    <p>© 2026 GHL | All Rights Reserved</p>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-col">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo">
+            <p>
+                Your Company is a leading infrastructure firm specializing in pipeline,
+                gas distribution and engineering solutions.
+            </p>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Board Members</a></li>
+            </ul>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-col">
+            <h3>Contacts</h3>
+            <p>📍 Your Address Here</p>
+            <p>📞 +91 9876543210</p>
+            <p>📧 info@yourcompany.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 GHL | All Rights Reserved
+    </div>
+
 </footer>
 
 <!-- JS LIBRARIES -->
