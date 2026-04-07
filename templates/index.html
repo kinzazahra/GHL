@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Company</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<!-- Swiper Slider -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="header">
+    <div class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo">
+</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO SLIDER -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide slide1">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>Engineering Excellence</h1>
+        <p>Delivering world-class infrastructure</p>
+      </div>
+    </div>
+
+    <div class="swiper-slide slide2">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>We Build the Future</h1>
+        <p>Reliable pipeline solutions</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>
+        We deliver high-quality pipeline and infrastructure solutions with
+        precision, safety, and innovation across industries.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <h2 data-aos="fade-up">Our Services</h2>
+
+    <div class="cards">
+        <div class="card" data-aos="fade-up">
+            <i class="fas fa-industry"></i>
+            <h3>Pipeline Construction</h3>
+            <p>Advanced pipeline engineering solutions.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up">
+            <i class="fas fa-gas-pump"></i>
+            <h3>Gas Distribution</h3>
+            <p>Efficient and safe distribution systems.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up">
+            <i class="fas fa-tools"></i>
+            <h3>Maintenance</h3>
+            <p>Reliable long-term operations support.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+    <h2 data-aos="fade-up">Our Projects</h2>
+    <div class="gallery">
+        <img src="{{ url_for('static', filename='images/p1.jpg') }}" data-aos="zoom-in">
+        <img src="{{ url_for('static', filename='images/p2.jpg') }}" data-aos="zoom-in">
+        <img src="{{ url_for('static', filename='images/p3.jpg') }}" data-aos="zoom-in">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+    <p class="small-text">How can we help you?</p>
+    <h2>Get In Touch Now</h2>
+    <p class="sub-text">For all enquiries, please write us using below form.</p>
+
+    <div class="contact-container">
+
+        <!-- LEFT: MAP -->
+        <div class="map">
+            <iframe 
+                src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0">
+            </iframe>
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="contact-info">
+            <h3>Reach Us</h3>
+
+            <p>📍 Your Company Address, City, Country</p>
+            <p>📞 +91 9876543210</p>
+            <p>📧 info@yourcompany.com</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 GHL | All Rights Reserved</p>
+</footer>
+
+<!-- JS LIBRARIES -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- INIT -->
+<script>
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay: { delay: 3000 },
+});
+
+AOS.init();
+</script>
+
+</body>
+</html>
