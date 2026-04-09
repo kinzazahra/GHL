@@ -4,19 +4,11 @@
 <meta charset="UTF-8">
 <title>Your Company</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-<!-- Swiper Slider -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-<!-- AOS Animation -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Custom CSS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -25,45 +17,46 @@
 <!-- NAVBAR -->
 <header class="header">
     <div class="logo">
-    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo">
-</div>
+        <img src="{{ url_for('static', filename='images/logo.png') }}">
+    </div>
+
     <nav>
 
-    <div class="dropdown">
-        <a href="#">About Us ▾</a>
-        <div class="dropdown-content">
-            <a href="#">About Company</a>
-            <a href="#">Quality & Safety</a>
-            <a href="#">Board Members</a>
+        <div class="dropdown">
+            <a href="#">About Us ▾</a>
+            <div class="dropdown-content">
+                <a href="/about">About Company</a>
+                <a href="/about">Quality & Safety</a>
+                <a href="/about">Board Members</a>
+            </div>
         </div>
-    </div>
 
-    <div class="dropdown">
-        <a href="#">Services ▾</a>
-        <div class="dropdown-content">
-            <a href="#">Services</a>
-            <a href="#">Ongoing Projects</a>
-            <a href="#">Completed Projects</a>
+        <div class="dropdown">
+            <a href="#">Services ▾</a>
+            <div class="dropdown-content">
+                <a href="/services">Services</a>
+                <a href="/services">Ongoing Projects</a>
+                <a href="/services">Completed Projects</a>
+            </div>
         </div>
-    </div>
 
-    <a href="#">Careers</a>
-    <a href="#">Gallery</a>
+        <a href="#">Careers</a>
+        <a href="#">Gallery</a>
 
-    <div class="dropdown">
-        <a href="#">Investors ▾</a>
-        <div class="dropdown-content">
-            <a href="#">Investor Info</a>
-            <a href="#">Disclosures</a>
+        <div class="dropdown">
+            <a href="#">Investors ▾</a>
+            <div class="dropdown-content">
+                <a href="/investors">Investor Info</a>
+                <a href="/investors">Disclosures</a>
+            </div>
         </div>
-    </div>
 
-    <a href="#contact">Contact Us</a>
+        <a href="#contact">Contact Us</a>
 
-</nav>
+    </nav>
 </header>
 
-<!-- HERO SLIDER -->
+<!-- HERO -->
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
 
@@ -87,7 +80,7 @@
 </div>
 
 <!-- ABOUT -->
-<section id="about" class="about" data-aos="fade-up">
+<section class="about" data-aos="fade-up">
     <h2>About Us</h2>
     <p>
         We deliver high-quality pipeline and infrastructure solutions with
@@ -96,37 +89,34 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="services">
+<section class="services">
     <h2 data-aos="fade-up">Our Services</h2>
 
     <div class="cards">
         <div class="card" data-aos="fade-up">
             <i class="fas fa-industry"></i>
             <h3>Pipeline Construction</h3>
-            <p>Advanced pipeline engineering solutions.</p>
         </div>
 
         <div class="card" data-aos="fade-up">
             <i class="fas fa-gas-pump"></i>
             <h3>Gas Distribution</h3>
-            <p>Efficient and safe distribution systems.</p>
         </div>
 
         <div class="card" data-aos="fade-up">
             <i class="fas fa-tools"></i>
             <h3>Maintenance</h3>
-            <p>Reliable long-term operations support.</p>
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects">
+<section class="projects">
     <h2 data-aos="fade-up">Our Projects</h2>
     <div class="gallery">
-        <img src="{{ url_for('static', filename='images/p1.jpg') }}" data-aos="zoom-in">
-        <img src="{{ url_for('static', filename='images/p2.jpg') }}" data-aos="zoom-in">
-        <img src="{{ url_for('static', filename='images/p3.jpg') }}" data-aos="zoom-in">
+        <img src="{{ url_for('static', filename='images/p1.jpg') }}">
+        <img src="{{ url_for('static', filename='images/p2.jpg') }}">
+        <img src="{{ url_for('static', filename='images/p3.jpg') }}">
     </div>
 </section>
 
@@ -135,63 +125,48 @@
 
     <p class="small-text">How can we help you?</p>
     <h2>Get In Touch Now</h2>
-    <p class="sub-text">For all enquiries, please write us using below form.</p>
 
     <div class="contact-container">
 
-        <!-- LEFT: MAP -->
         <div class="map">
-            <iframe 
-                src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                frameborder="0">
-            </iframe>
+            <iframe src="https://www.google.com/maps?q=hyderabad&output=embed"></iframe>
         </div>
 
-        <!-- RIGHT: DETAILS -->
         <div class="contact-info">
             <h3>Reach Us</h3>
-
-            <p>📍 Your Company Address, City, Country</p>
+            <p>📍 Your Address</p>
             <p>📞 +91 9876543210</p>
             <p>📧 info@yourcompany.com</p>
-
         </div>
 
     </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
 
     <div class="footer-container">
 
-        <!-- LEFT -->
         <div class="footer-col">
             <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo">
-            <p>
-                Your Company is a leading infrastructure firm specializing in pipeline,
-                gas distribution and engineering solutions.
-            </p>
+            <p>Leading infrastructure company delivering pipeline solutions.</p>
         </div>
 
-        <!-- CENTER -->
         <div class="footer-col">
             <h3>Quick Links</h3>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Investors</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Board Members</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/investors">Investors</a></li>
             </ul>
         </div>
 
-        <!-- RIGHT -->
         <div class="footer-col">
             <h3>Contacts</h3>
-            <p>📍 Your Address Here</p>
-            <p>📞 +91 9876543210</p>
-            <p>📧 info@yourcompany.com</p>
+            <p>📍 Address</p>
+            <p>📞 Phone</p>
+            <p>📧 Email</p>
         </div>
 
     </div>
@@ -202,11 +177,9 @@
 
 </footer>
 
-<!-- JS LIBRARIES -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- INIT -->
 <script>
 var swiper = new Swiper(".mySwiper", {
   loop: true,
