@@ -2,41 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>{% block title %}Your Company{% endblock %}</title>
+<title>{% block title %}GHL Infratech{% endblock %}</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header class="header">
     <div class="logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }}">
+    <img src="{{ url_for('static', filename='images/logo.png') }}">
+    <span class="logo-text">GHL INFRATECH</span>
     </div>
 
     <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/investors">Investors</a>
-        <a href="/#contact">Contact</a>
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+
+        <div class="dropdown">
+            <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About Us ▾</a>
+            <div class="dropdown-content">
+                <a href="/about">About Company</a>
+                <a href="/about">Quality & Safety</a> 
+                <a href="/about">Board Members</a> 
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="/services" class="{% if request.path == '/services' %}active{% endif %}">Services ▾</a>
+            <div class="dropdown-content">
+                <a href="/services">Services</a>
+                <a href="/services">Ongoing Projects</a> 
+                <a href="/services">Completed Projects</a> 
+            </div>
+        </div>
+
+        <a href="mailto:ghlinfratech@gmail.com">Careers</a> 
+        <a href="#">Gallery</a>
+
+        <div class="dropdown">
+            <a href="/investors" class="{% if request.path == '/investors' %}active{% endif %}">Investors ▾</a>
+            <div class="dropdown-content">
+                <a href="/investors">Investor Info</a>
+                <a href="/investors">Disclosures</a>
+            </div>
+        </div>
+
+        <a href="/#contact">Contact Us</a>
     </nav>
 </header>
 
-<!-- PAGE CONTENT -->
 {% block content %}{% endblock %}
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
             <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo">
-            <p>Leading infrastructure company delivering pipeline solutions.</p>
+            <p>Leading pipeline infrastructure company delivering quality and safety.</p>
         </div>
 
         <div class="footer-col">
@@ -50,14 +76,14 @@
 
         <div class="footer-col">
             <h3>Contacts</h3>
-            <p>📍 Address</p>
-            <p>📞 Phone</p>
-            <p>📧 Email</p>
+            <p>📍 India</p>
+            <p>📞 +91-7975811803</p>
+            <p>📧 ghlinfratech@gmail.com</p>
         </div>
     </div>
 
     <div class="footer-bottom">
-        © 2026 Your Company | All Rights Reserved
+        © 2026 GHL Infratech | All Rights Reserved
     </div>
 </footer>
 
@@ -67,6 +93,8 @@
 <script>
 AOS.init();
 </script>
+
+{% block scripts %}{% endblock %}
 
 </body>
 </html>

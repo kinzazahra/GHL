@@ -1,193 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Your Company</title>
+{% extends "base.html" %}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% block title %}Home - GHL Infratech{% endblock %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<header class="header">
-    <div class="logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }}">
-    </div>
-
-    <nav>
-
-        <div class="dropdown">
-            <a href="#">About Us ▾</a>
-            <div class="dropdown-content">
-                <a href="/about">About Company</a>
-                <a href="/about">Quality & Safety</a>
-                <a href="/about">Board Members</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#">Services ▾</a>
-            <div class="dropdown-content">
-                <a href="/services">Services</a>
-                <a href="/services">Ongoing Projects</a>
-                <a href="/services">Completed Projects</a>
-            </div>
-        </div>
-
-        <a href="#">Careers</a>
-        <a href="#">Gallery</a>
-
-        <div class="dropdown">
-            <a href="#">Investors ▾</a>
-            <div class="dropdown-content">
-                <a href="/investors">Investor Info</a>
-                <a href="/investors">Disclosures</a>
-            </div>
-        </div>
-
-        <a href="#contact">Contact Us</a>
-
-    </nav>
-</header>
-
-<!-- HERO -->
+{% block content %}
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
-
     <div class="swiper-slide slide1">
       <div class="overlay"></div>
       <div class="hero-text">
         <h1>Engineering Excellence</h1>
-        <p>Delivering world-class infrastructure</p>
+        <p>Leading Pipeline Infrastructure Solutions</p>
       </div>
     </div>
-
     <div class="swiper-slide slide2">
       <div class="overlay"></div>
       <div class="hero-text">
         <h1>We Build the Future</h1>
-        <p>Reliable pipeline solutions</p>
+        <p>Expertise in Cross-Country and City Gas Distribution</p>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" data-aos="fade-up">
-    <h2>About Us</h2>
-    <p>
-        We deliver high-quality pipeline and infrastructure solutions with
-        precision, safety, and innovation across industries.
-    </p>
+<section class="about" data-aos="fade-up" style="max-width: 1200px; margin: 80px auto; padding: 0 20px;">
+    
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-size: 36px; color: #1a2b56; font-weight: 700; margin-bottom: 10px;">About GHL Infratech</h2>
+        <div style="width: 60px; height: 3px; background-color: #ff6b00; margin: 0 auto;"></div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+        
+        <div style="flex: 1; min-width: 320px;">
+            <p style="font-size: 18px; color: #ff6b00; font-weight: 600; margin-bottom: 20px; line-height: 1.6;">
+                Established in 2020, we provide comprehensive erection, testing, and commissioning of Oil & Gas Pipelines, City Gas Distribution Projects, and Operation & Maintenance (O&M) Services.
+            </p>
+            <p style="color: #555; line-height: 1.8; margin-bottom: 15px; text-align: justify; font-size: 15px;">
+                Our operations are driven by three principal business lines: Cross Country Pipelines, City Gas Distribution (including CNG Stations), and O&M services. We are guided by our Promoter, Mr. Syed Haider Imam, a technocrat with over 3 decades of vast technical experience in hydrocarbon pipelines and CGD projects. His vision and leadership continue to take the company to new heights, ensuring timely execution and international quality.
+            </p>
+            <p style="color: #555; line-height: 1.8; text-align: justify; font-size: 15px; margin: 0;">
+                We are proud of our excellent track record of successful project execution from inception. We take pride in relating our success to our employees for their consistent efforts and dedication, ensuring total quality and customer satisfaction across all business areas.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 320px; background: #f8f9fa; border-left: 5px solid #1a2b56; padding: 40px 30px; border-radius: 0 12px 12px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            
+            <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 25px;">
+                <i class="fas fa-map-marked-alt" style="color: #ff6b00; font-size: 28px; margin-top: 5px;"></i>
+                <div>
+                    <strong style="color: #1a2b56; display: block; font-size: 18px; margin-bottom: 5px;">Pan-India Presence</strong>
+                    <span style="color: #666; font-size: 14px; line-height: 1.6; display: block;">6+ years of experience across Karnataka, Maharashtra, Odisha, Telangana, Chandigarh, Haryana, and Uttar Pradesh.</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 25px;">
+                <i class="fas fa-handshake" style="color: #ff6b00; font-size: 28px; margin-top: 5px;"></i>
+                <div>
+                    <strong style="color: #1a2b56; display: block; font-size: 18px; margin-bottom: 5px;">Trusted Partners</strong>
+                    <span style="color: #666; font-size: 14px; line-height: 1.6; display: block;">Presently working with major PSUs and CGD companies across India, maintaining long-term relationships.</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 20px;">
+                <i class="fas fa-users-cog" style="color: #ff6b00; font-size: 28px; margin-top: 5px;"></i>
+                <div>
+                    <strong style="color: #1a2b56; display: block; font-size: 18px; margin-bottom: 5px;">Expert Management</strong>
+                    <span style="color: #666; font-size: 14px; line-height: 1.6; display: block;">Driven by highly experienced personnel in technical, operational, and business development domains.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
-    <h2 data-aos="fade-up">Our Services</h2>
-
-    <div class="cards">
+    <h2 data-aos="fade-up">Our Principal Business Lines</h2> <div class="cards">
         <div class="card" data-aos="fade-up">
             <i class="fas fa-industry"></i>
-            <h3>Pipeline Construction</h3>
+            <h3>Cross Country Pipelines</h3> <p>Laying Oil and Gas Pipelines over long distances with advanced GPS surveys.</p>
         </div>
 
         <div class="card" data-aos="fade-up">
             <i class="fas fa-gas-pump"></i>
-            <h3>Gas Distribution</h3>
+            <h3>City Gas Distribution</h3> <p>Setting up CNG stations and PNG networks for domestic and industrial use.</p>
         </div>
 
         <div class="card" data-aos="fade-up">
             <i class="fas fa-tools"></i>
-            <h3>Maintenance</h3>
+            <h3>Operation & Maintenance</h3> <p>Providing repairs, modernization, and scheduled shutdowns for existing pipelines.</p>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="projects">
-    <h2 data-aos="fade-up">Our Projects</h2>
-    <div class="gallery">
-        <img src="{{ url_for('static', filename='images/p1.jpg') }}">
-        <img src="{{ url_for('static', filename='images/p2.jpg') }}">
-        <img src="{{ url_for('static', filename='images/p3.jpg') }}">
+<style>
+    .project-gallery-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px; 
+        transition: transform 0.3s ease;
+        background: #fff;
+    }
+    .project-gallery-card:hover {
+        transform: translateY(-10px);
+    }
+    .project-gallery-card img {
+        width: 100%;
+        height: 280px; 
+        object-fit: cover; 
+        display: block; 
+        border-bottom: 5px solid #1a2b56; 
+    }
+</style>
+
+<section class="gallery-section" style="padding: 80px 20px; max-width: 1200px; margin: auto; background-color: #f9f9f9;">
+    
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h2 data-aos="fade-up" style="font-size: 36px; color: #333; font-weight: 700; margin-bottom: 10px;">Featured Projects</h2>
+        <div style="width: 60px; height: 3px; background-color: #ff6b00; margin: 0 auto;"></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        
+        <div data-aos="fade-up" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Terminals" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Terminals</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="100" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/p1.jpg') }}" alt="Cross Country Pipeline" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Cross Country Pipeline</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/p2.jpg') }}" alt="CNG Station" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">CNG Station</h4>
+        </div>
+        
+        <div data-aos="fade-up" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="Pipeline Laying" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Pipeline Laying</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="100" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="Our Construction Team" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Our Construction Team</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/values.jpg') }}" alt="Heavy Equipment" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Heavy Equipment</h4>
+        </div>
+
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
-
     <p class="small-text">How can we help you?</p>
     <h2>Get In Touch Now</h2>
 
     <div class="contact-container">
-
         <div class="map">
-            <iframe src="https://www.google.com/maps?q=hyderabad&output=embed"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2233913120413!2d77.03964!3d28.5029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMwJzEwLjQiTiA3N8KwMDInMjIuNyJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"></iframe>
         </div>
 
         <div class="contact-info">
             <h3>Reach Us</h3>
-            <p>📍 Your Address</p>
-            <p>📞 +91 9876543210</p>
-            <p>📧 info@yourcompany.com</p>
+            <p>📍 India</p>
+            <p>📞 +91-7975811803</p>
+            <p>📧 ghlinfratech@gmail.com</p>
+            <p>🌐 www.ghlinfratech.com</p>
         </div>
-
     </div>
-
 </section>
+{% endblock %}
 
-<!-- FOOTER -->
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <div class="footer-col">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo">
-            <p>Leading infrastructure company delivering pipeline solutions.</p>
-        </div>
-
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/investors">Investors</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Contacts</h3>
-            <p>📍 Address</p>
-            <p>📞 Phone</p>
-            <p>📧 Email</p>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 GHL | All Rights Reserved
-    </div>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+{% block scripts %}
 <script>
 var swiper = new Swiper(".mySwiper", {
   loop: true,
   autoplay: { delay: 3000 },
 });
-
-AOS.init();
 </script>
-
-</body>
-</html>
+{% endblock %}
