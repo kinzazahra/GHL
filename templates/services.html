@@ -3,26 +3,59 @@
 {% block title %}Services - GHL Infratech{% endblock %}
 
 {% block content %}
-<section class="about-page">
-    <h1 style="text-align:center;">Our Services</h1> <h3>Pipeline Infrastructure</h3> <p>
-        We undertake projects for laying pipelines in Cross-Country projects and setting up City Gas Distribution networks, including all associated facilities[cite: 51].
-    </p>
+<div class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ url_for('static', filename='images/p3.jpg') }}') center/cover; padding: 220px 0; text-align: center; color: white; margin-top: -20px;">
+    <h1 style="font-size: 48px; margin: 0; font-weight: 700;">Our Services</h1>
+    <p style="font-size: 16px; margin-top: 10px; color: #ddd;">Home / Services</p>
+</div>
 
-    <div style="margin-left: 20px;">
-        <h4>1. Cross-Country Pipeline Laying [cite: 52]</h4>
-        <p>
-            Includes fabrication, erection, installation, testing, and commissioning of underground pipelines. We handle mechanical, civil, structural, electrical, and instrumentation works[cite: 54].
-        </p>
-
-        <h4>2. City Gas Distribution (CGD) [cite: 56]</h4>
-        <p>
-            Our scope includes laying High Pressure Gas Steel and MDPE pipelines for Industrial, Commercial, and Domestic segments (CNG/PNG)[cite: 57, 61]. We cater to households, hotels, hospitals, and power generation industries[cite: 58, 59, 60].
-        </p>
-
-        <h4>3. Operation & Maintenance (O&M) [cite: 62]</h4>
-        <p>
-            We provide management services for CGD networks, including emergency repairs, modernization, overhauling, and scheduled shutdowns of existing pipelines[cite: 63, 64, 65].
+<section style="max-width: 1200px; margin: 80px auto; padding: 0 20px;">
+    
+    <div style="text-align: center; margin-bottom: 80px;">
+        <h2 data-aos="fade-up" style="font-size: 36px; color: #1a2b56; font-weight: 700; margin-bottom: 10px;">Pipeline Infrastructure</h2>
+        <div style="width: 60px; height: 3px; background-color: #ff6b00; margin: 0 auto 25px;"></div>
+        <p data-aos="fade-up" style="color: #555; font-size: 18px; max-width: 800px; margin: auto; line-height: 1.8;">
+            Our pipeline infrastructure business comprises of undertaking projects for laying of pipelines in Cross-Country Pipeline projects as well as for setting up City Gas Distribution network and construction of associated facilities.
         </p>
     </div>
+
+    <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap; margin-bottom: 90px;">
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-right">
+            <img src="{{ url_for('static', filename='images/p1.jpg') }}" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" alt="Cross Country Pipeline Laying">
+        </div>
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-left">
+            <h3 style="font-size: 28px; color: #1a2b56; margin-bottom: 20px; font-weight: 700;">Cross Country Pipeline Laying</h3>
+            <p style="color: #555; line-height: 1.8; font-size: 16px; text-align: justify;">
+                Our Cross-Country Pipeline projects entail laying of Oil and Gas Pipelines over long distances. It includes Oil and Gas Pipeline laying along with construction of associated facilities which comprises of providing fabrication, erection, installation, testing and commissioning of the underground Pipelines including associated Mechanical, Civil, Structural, Electrical, Instrumentation and Telecom works. Advanced measures such as Global Positioning System (GPS) aided surveys, 3 LPE joint coating for pipelines, and advanced NDT techniques are adopted depending on the requirements of the project.
+            </p>
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap-reverse; margin-bottom: 90px;">
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-right">
+            <h3 style="font-size: 28px; color: #1a2b56; margin-bottom: 20px; font-weight: 700;">City Gas Distribution Network</h3>
+            <p style="color: #555; line-height: 1.8; font-size: 16px; text-align: justify; margin-bottom: 15px;">
+                CGD projects entail transportation or distribution of natural gas to consumers in domestic, commercial or industrial and transport sectors through a network of pipelines. In other words, CGD projects cater to the following segments: Domestic household use; commercial use in hotels, hospitals, restaurant and offices; transport sector use in vehicles; and by small scale industries for power generation.
+            </p>
+            <p style="color: #555; line-height: 1.8; font-size: 16px; text-align: justify;">
+                Our Company's scope of work in CGD projects includes laying of High Pressure Gas Steel Pipelines and Medium Density Polyethylene (MDPE) Pipelines for Industrial / Commercial, Compressed Natural Gas ("CNG") network and Piped Natural Gas ("PNG") Network, Construction of CNG Stations including Civil, Mechanical, Electrical & Instrumentation works, Connectivity to Household, Commercial and Industrial Segments through High Pressure Gas Steel Pipelines, MDPE Pipelines, Galvanized Iron Pipes, copper tubing, etc. as per the project requirements.
+            </p>
+        </div>
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-left">
+            <img src="{{ url_for('static', filename='images/p2.jpg') }}" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" alt="City Gas Distribution Network">
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-right">
+            <img src="{{ url_for('static', filename='images/bg.jpg') }}" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" alt="Operation & Maintenance Services">
+        </div>
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-left">
+            <h3 style="font-size: 28px; color: #1a2b56; margin-bottom: 20px; font-weight: 700;">Operation & Maintenance Services</h3>
+            <p style="color: #555; line-height: 1.8; font-size: 16px; text-align: justify;">
+                Our Company also provides Operations & Maintenance Services to the Oil and Gas Companies. Our Operation and Maintenance (O & M) Services business includes Management Services for CGD networks, other repairs, modernization, scheduled shutdowns, as well as overhauling and maintenance of existing pipelines. Operation & Maintenance activities involves deploying manpower and tools required for replacement of existing pipelines, emergency repair and maintenance, shifting and compressor hook up of pipelines with associated facilities.
+            </p>
+        </div>
+    </div>
+
 </section>
 {% endblock %}

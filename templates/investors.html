@@ -1,31 +1,133 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Investors</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
 
-<h1 style="text-align:center; margin-top:100px;">Investor Information</h1>
+{% block title %}Investors - GHL Infratech{% endblock %}
 
-<div style="max-width:800px; margin:auto; padding:20px;">
-
-    <p>
-        Our company maintains transparency and strong governance practices to ensure
-        trust and confidence among investors.
-    </p>
-
-    <h3>Financial Reports</h3>
-    <p>Access annual reports, quarterly results, and financial statements.</p>
-
-    <h3>Corporate Governance</h3>
-    <p>We follow ethical business practices and maintain high standards of corporate governance.</p>
-
-    <h3>Disclosures</h3>
-    <p>All regulatory disclosures and compliance reports are available for stakeholders.</p>
-
+{% block content %}
+<div class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ url_for('static', filename='images/bg.jpg') }}') center/cover; padding: 220px 0; text-align: center; color: white; margin-top: -20px;">
+    <h1 style="font-size: 48px; margin: 0; font-weight: 700;">Investor Relations</h1>
+    <p style="font-size: 16px; margin-top: 10px; color: #ddd;">Home / Investors</p>
 </div>
 
-</body>
-</html>
+<section style="padding: 60px 20px; background: #fff; text-align: center; border-bottom: 1px solid #eee;">
+    <div style="max-width: 1000px; margin: auto;">
+        <p style="color: #ff6b00; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Stock Information</p>
+        <h2 style="font-size: 32px; color: #1a2b56; font-weight: 700; margin-bottom: 40px;" data-aos="fade-up">Listed Exchanges</h2>
+        
+        <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;">
+            
+            <div data-aos="fade-up" data-aos-delay="100" style="background: #f8f9fa; padding: 25px 50px; border-radius: 12px; border: 1px solid #e0e0e0; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: #1a2b56; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-chart-pie" style="font-size: 28px; color: #fff;"></i>
+                </div>
+                <div style="text-align: left;">
+                    <strong style="display: block; font-size: 22px; color: #333;">Global Stock Index</strong>
+                    <span style="color: #666; font-size: 14px;">Ticker: <strong style="color: #ff6b00;">GHL:GSI</strong></span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" style="background: #f8f9fa; padding: 25px 50px; border-radius: 12px; border: 1px solid #e0e0e0; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: #be1e2d; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-globe-americas" style="font-size: 28px; color: #fff;"></i>
+                </div>
+                <div style="text-align: left;">
+                    <strong style="display: block; font-size: 22px; color: #333;">National Trade Board</strong>
+                    <span style="color: #666; font-size: 14px;">Ticker: <strong style="color: #ff6b00;">GHL:NTB</strong></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .investor-card {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        text-align: center;
+        border-top: 4px solid transparent;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 250px;
+    }
+    .investor-card:hover {
+        border-top: 4px solid #ff6b00;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .investor-card i {
+        font-size: 40px;
+        color: #1a2b56;
+        margin-bottom: 20px;
+    }
+    .investor-card h3 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    .investor-card p {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+    .investor-btn {
+        display: inline-block;
+        padding: 10px 25px;
+        background: #f8f9fa;
+        color: #1a2b56;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        transition: 0.3s;
+    }
+    .investor-card:hover .investor-btn {
+        background: #1a2b56;
+        color: #fff;
+        border-color: #1a2b56;
+    }
+</style>
+
+<section style="padding: 80px 20px; max-width: 1200px; margin: auto; background: #f9f9f9;">
+    
+    <div style="text-align: center; margin-bottom: 60px;">
+        <h2 data-aos="fade-up" style="font-size: 36px; color: #333; font-weight: 700; margin-bottom: 10px;">Investor Related Info</h2>
+        <div style="width: 60px; height: 3px; background-color: #ff6b00; margin: 0 auto;"></div>
+    </div>
+
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+        
+        <div class="investor-card" data-aos="fade-up">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <h3>Financial Results</h3>
+            <p>Access our quarterly and annual financial statements, balance sheets, and audit reports.</p>
+            <a href="#" class="investor-btn">View Reports</a>
+        </div>
+
+        <div class="investor-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Shareholding Pattern</h3>
+            <p>Detailed breakdown of our company's shareholding structure and equity distribution.</p>
+            <a href="#" class="investor-btn">View Pattern</a>
+        </div>
+
+        <div class="investor-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-landmark"></i>
+            <h3>Corporate Governance</h3>
+            <p>Information regarding our board of directors, committees, and compliance reports.</p>
+            <a href="#" class="investor-btn">View Details</a>
+        </div>
+
+        <div class="investor-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Disclosures</h3>
+            <p>Important company announcements, stock exchange intimations, and press releases.</p>
+            <a href="#" class="investor-btn">View Disclosures</a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
