@@ -422,3 +422,37 @@ footer {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
+/* GRID LAYOUT */
+.gallery-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* CARD DESIGN */
+.gallery-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+/* IMAGE */
+.gallery-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* HOVER EFFECT (optional but 🔥) */
+.gallery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.gallery-card img {
+    height: 280px;
+}

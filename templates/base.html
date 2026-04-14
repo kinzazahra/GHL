@@ -42,7 +42,7 @@
         </div>
 
         <a href="mailto:ghlinfratech@gmail.com">Careers</a> 
-        <a href="#">Gallery</a>
+        <a href="/gallery" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a>
 
         <div class="dropdown">
             <a href="/investors" class="{% if request.path == '/investors' %}active{% endif %}">Investors ▾</a>

@@ -154,6 +154,51 @@
             <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Heavy Equipment</h4>
         </div>
 
+        <div data-aos="fade-up" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj7.jpg') }}" alt="Project 7" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 7</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="100" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj8.jpg') }}" alt="Project 8" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 8</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj9.jpg') }}" alt="Project 9" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 9</h4>
+        </div>
+
+        <div data-aos="fade-up" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj10.jpg') }}" alt="Project 10" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 10</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="100" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj11.jpg') }}" alt="Project 11" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 11</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj12.jpg') }}" alt="Project 12" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 12</h4>
+        </div>
+
+        <div data-aos="fade-up" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj13.jpg') }}" alt="Project 13" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 13</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="100" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj14.jpg') }}" alt="Project 14" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 14</h4>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" style="text-align: center; background: #fff; padding-bottom: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/proj15.jpg') }}" alt="Project 15" style="width: 100%; height: 220px; object-fit: cover;">
+            <h4 style="margin-top: 15px; color: #333; font-weight: 600; font-size: 18px;">Project Title 15</h4>
+        </div>
+
     </div>
 </section>
 
@@ -184,4 +229,67 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: { delay: 3000 },
 });
 </script>
+
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<style>
+    /* Make gallery images look clickable */
+    .gallery-section img {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 9999; /* Sit on top of everything, including navbar */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        backdrop-filter: blur(5px); /* Cool blurred background effect */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        animation-name: zoomIn;
+        animation-duration: 0.4s;
+    }
+
+    @keyframes zoomIn {
+        from {transform: scale(0.8); opacity: 0;}
+        to {transform: scale(1); opacity: 1;}
+    }
+
+    /* The Close Button */
+    .close-modal {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        color: #fff;
+        font-size: 50px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .close-modal:hover,
+    .close-modal:focus {
+        color: #ff6b00; /* Turns orange on hover */
+        text-decoration: none;
+    }
+</style>
 {% endblock %}

@@ -23,6 +23,10 @@ def services():
 def investors():
     return render_template('investors.html')
 
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
     
