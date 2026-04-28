@@ -23,6 +23,11 @@ def services():
 def investors():
     return render_template('investors.html')
 
+# CAREERS PAGE
+@app.route('/careers')
+def careers():
+    return render_template('careers.html')
+
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Careers - GHL Infratech{% endblock %}
+
+{% block content %}
+<div class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ url_for('static', filename='images/about.jpg') }}') center/cover; padding: 220px 0; text-align: center; color: white; margin-top: -20px;">
+    <h1 style="font-size: 48px; margin: 0; font-weight: 700;">Careers</h1>
+    <p style="font-size: 16px; margin-top: 10px; color: #ddd;">Home / Careers</p>
+</div>
+
+<section style="padding: 80px 20px; background-color: #f9f9f9;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-right">
+            <p style="color: #ff6b00; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Join Our Team</p>
+            <h2 style="font-size: 36px; color: #1a2b56; font-weight: 700; margin-bottom: 20px;">Build your future with GHL Infratech</h2>
+            <p style="color: #555; line-height: 1.8; font-size: 16px; margin-bottom: 40px;">
+                We are one of India's fastest-growing pipeline infrastructure companies. We believe our greatest asset is our people. If you are passionate, driven, and looking for a challenging environment, we want to hear from you.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 55px; height: 55px; background: rgba(255, 107, 0, 0.1); color: #ff6b00; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 22px;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <strong style="color: #1a2b56; font-size: 18px; display: block; margin-bottom: 3px;">Accelerated Growth</strong>
+                        <span style="color: #666; font-size: 15px; line-height: 1.5; display: block;">Work on major cross-country and CGD projects across India.</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 55px; height: 55px; background: rgba(26, 43, 86, 0.1); color: #1a2b56; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 22px;">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div>
+                        <strong style="color: #1a2b56; font-size: 18px; display: block; margin-bottom: 3px;">Expert Team Environment</strong>
+                        <span style="color: #666; font-size: 15px; line-height: 1.5; display: block;">Collaborate with industry veterans and highly experienced personnel.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 320px;" data-aos="fade-left">
+            <div style="background: #fff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.06);">
+                <h3 style="font-size: 24px; color: #1a2b56; font-weight: 700; margin-bottom: 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px;">Submit Your Application</h3>
+                
+                <form action="https://formspree.io/f/your_custom_link_here" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 22px;">
+                    
+                    <div>
+                        <label style="font-size: 14px; color: #444; font-weight: 600; margin-bottom: 8px; display: block;">Full Name <span style="color: #d93025;">*</span></label>
+                        <input type="text" name="full_name" placeholder="Enter your full name" required style="width: 100%; padding: 14px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fafafa; box-sizing: border-box; transition: 0.3s; outline: none;" onfocus="this.style.borderColor='#1a2b56'; this.style.background='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.background='#fafafa';">
+                    </div>
+
+                    <div>
+                        <label style="font-size: 14px; color: #444; font-weight: 600; margin-bottom: 8px; display: block;">Email Address <span style="color: #d93025;">*</span></label>
+                        <input type="email" name="email" placeholder="name@example.com" required style="width: 100%; padding: 14px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fafafa; box-sizing: border-box; transition: 0.3s; outline: none;" onfocus="this.style.borderColor='#1a2b56'; this.style.background='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.background='#fafafa';">
+                    </div>
+
+                    <div>
+                        <label style="font-size: 14px; color: #444; font-weight: 600; margin-bottom: 8px; display: block;">Position Applied For</label>
+                        <input type="text" name="post_applied" placeholder="e.g. Project Manager, Field Engineer" style="width: 100%; padding: 14px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fafafa; box-sizing: border-box; transition: 0.3s; outline: none;" onfocus="this.style.borderColor='#1a2b56'; this.style.background='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.background='#fafafa';">
+                    </div>
+
+                    <div>
+                        <label style="font-size: 14px; color: #444; font-weight: 600; margin-bottom: 8px; display: block;">Upload Resume (PDF/DOC) <span style="color: #d93025;">*</span></label>
+                        <div style="position: relative;">
+                            <input type="file" name="resume" accept=".pdf,.doc,.docx" required style="width: 100%; padding: 12px 15px; border: 1px dashed #bbb; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fafafa; box-sizing: border-box; cursor: pointer;">
+                        </div>
+                    </div>
+
+                    <button type="submit" style="width: 100%; padding: 16px; background: #ff6b00; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.3s; margin-top: 10px; font-family: 'Poppins', sans-serif;" onmouseover="this.style.backgroundColor='#1a2b56'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='#ff6b00'; this.style.transform='translateY(0)';">Submit Application <i class="fas fa-paper-plane" style="margin-left: 5px;"></i></button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
