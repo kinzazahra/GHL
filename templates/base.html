@@ -27,8 +27,9 @@
             <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About Us ▾</a>
             <div class="dropdown-content">
                 <a href="/about">About Company</a>
-                <a href="/about">Quality & Safety</a> 
-                <a href="/about">Board Members</a> 
+                <!-- UPDATED LINKS BELOW -->
+                <a href="/quality-and-safety">Quality & Safety</a> 
+                <a href="/board-members">Board Members</a> 
             </div>
         </div>
 
@@ -43,6 +44,7 @@
 
         <a href="/careers" class="{% if request.path == '/careers' %}active{% endif %}">Careers</a> 
         <a href="/gallery" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a>
+        
 
         <div class="dropdown">
             <a href="/investors" class="{% if request.path == '/investors' %}active{% endif %}">Investors ▾</a>

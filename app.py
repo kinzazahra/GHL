@@ -28,10 +28,20 @@ def investors():
 def careers():
     return render_template('careers.html')
 
+# GALLERY PAGE
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')
 
+# QUALITY AND SAFETY PAGE
+@app.route('/quality-and-safety')
+def quality_safety():
+    return render_template('quality_safety.html')
+
+# BOARD MEMBERS PAGE
+@app.route('/board-members')
+def board_members():
+    return render_template('board_members.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
-    

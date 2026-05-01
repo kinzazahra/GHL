@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}Quality, Health, Safety & Environment - GHL Infratech{% endblock %}
+
+{% block content %}
+<style>
+    /* --- Hero Banner Style --- */
+    .page-hero {
+        position: relative;
+        width: 100%;
+        height: 450px; /* INCREASED HEIGHT HERE TO MATCH OTHER PAGES */
+        /* Replace 'bg.jpg' with your actual hero image filename */
+        background: url("{{ url_for('static', filename='images/bg.jpg') }}") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        margin-top: 0; /* Ensures it sits flush against the navbar */
+    }
+    
+    .page-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65); /* Dark overlay so text is readable */
+        z-index: 1;
+    }
+
+    .page-hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .page-hero h1 {
+        font-size: 48px; /* Slightly larger text to fit the taller banner */
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .page-hero .breadcrumbs {
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        color: #eee;
+        letter-spacing: 1px;
+    }
+
+    /* --- Modern Alternating Card Layout --- */
+    .qs-container {
+        max-width: 1100px;
+        margin: 60px auto 80px auto;
+        padding: 0 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .qs-card {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        margin-bottom: 40px;
+        align-items: center;
+        border-top: 4px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .qs-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    /* Give each card a subtle matching top-border */
+    .qs-card:nth-child(1) { border-top-color: #5dade2; }
+    .qs-card:nth-child(2) { border-top-color: #3498db; }
+    .qs-card:nth-child(3) { border-top-color: #f1c40f; }
+    .qs-card:nth-child(4) { border-top-color: #27ae60; }
+    
+    @media (min-width: 768px) {
+        .qs-card {
+            flex-direction: row;
+        }
+        /* This creates the alternating zigzag layout */
+        .qs-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+    
+    .qs-img-col {
+        flex: 0 0 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .qs-text-col {
+        flex: 1;
+    }
+    
+    .qs-text-col h2 {
+        color: #1a2b56;
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    .qs-text-col p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        text-align: justify;
+        font-size: 15px;
+    }
+    
+    .qs-text-col p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* --- Custom CSS Badges --- */
+    .badge-qa-bg {
+        width: 100%;
+        max-width: 220px;
+        height: 140px;
+        background: #d6eaf8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+    .badge-qa {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        border-radius: 50%;
+        border: 3px solid #5dade2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        color: #2980b9;
+        position: relative;
+    }
+    
+    .badge-policy {
+        width: 140px;
+        height: 140px;
+        background: #3498db;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+    }
+    .badge-policy::after {
+        content: "QUALITY POLICY";
+        position: absolute;
+        background: #333;
+        color: white;
+        width: 120%;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        top: 55%;
+        border-radius: 3px;
+    }
+
+    .badge-safety-bg {
+        width: 100%;
+        max-width: 220px;
+        height: 140px;
+        background: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=400&auto=format&fit=crop') center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+    }
+    .badge-safety {
+        width: 80px;
+        height: 80px;
+        background: #f1c40f;
+        border: 2px solid #000;
+        transform: rotate(45deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .badge-safety span {
+        transform: rotate(-45deg);
+        color: #000;
+        font-weight: 800;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .badge-env {
+        width: 140px;
+        height: 140px;
+        background: #27ae60;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 4px solid #abebc6;
+        box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+    }
+</style>
+
+<!-- Hero Banner Section -->
+<div class="page-hero">
+    <div class="page-hero-content">
+        <h1>Quality & Safety</h1>
+        <div class="breadcrumbs">Home / Quality & Safety</div>
+    </div>
+</div>
+
+<div class="qs-container">
+    
+    <!-- Quality Assurance Card -->
+    <div class="qs-card">
+        <div class="qs-img-col">
+            <div class="badge-qa-bg">
+                <div class="badge-qa">
+                    <i class="fas fa-star" style="font-size: 10px; margin-bottom: 2px;"></i>
+                    <i class="fas fa-star" style="font-size: 14px; margin-bottom: 2px;"></i>
+                    <i class="fas fa-star" style="font-size: 10px; margin-bottom: 5px;"></i>
+                    <strong style="font-size: 11px; text-align: center; line-height: 1.1;">Quality<br>Assurance</strong>
+                </div>
+            </div>
+        </div>
+        <div class="qs-text-col">
+            <h2>Quality Assurance</h2>
+            <p>Quality is a full time responsibility for our personnel. Our quality control system established is consistent with technically proven and conforming to the International Quality Management and Assurance Standards.</p>
+            <p>Our Quality Control / Quality Assurance Program ensures that operations are performed and reported in accordance with the project's requirement by deploying an organizational team including the Project Manager, the Project Superintendent, Field Superintendents, Crew Foremen, the Project Engineer, and the Purchasing Manager. This team controls documentation issued for the project and assures that all the testing is correctly performed and recorded to maintain qualification records.</p>
+        </div>
+    </div>
+
+    <!-- Quality Policy Card -->
+    <div class="qs-card">
+        <div class="qs-img-col">
+            <div class="badge-policy">
+                <div style="display: flex; gap: 5px; margin-bottom: 20px;">
+                    <i class="fas fa-star" style="font-size: 12px;"></i>
+                    <i class="fas fa-star" style="font-size: 16px; margin-top: -4px;"></i>
+                    <i class="fas fa-star" style="font-size: 12px;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="qs-text-col">
+            <h2>Quality Policy</h2>
+            <p>We are committed to provide the best Quality Services in the field of laying oil & gas pipelines and associated works to our customers as per their requirements abiding regulations and to the best of their satisfaction.</p>
+            <p>We will continuously upgrade our technical capabilities by enhancing our facilities, provide adequate training and build a dedicated workforce. We will continuously strive to remain competitive and deliver Quality Services every time and continually improve process performance by review of Quality Management System.</p>
+        </div>
+    </div>
+
+    <!-- Health and Safety Card -->
+    <div class="qs-card">
+        <div class="qs-img-col">
+            <div class="badge-safety-bg">
+                <div class="badge-safety">
+                    <span>Safety<br>First</span>
+                </div>
+            </div>
+        </div>
+        <div class="qs-text-col">
+            <h2>Health and Safety</h2>
+            <p>The Health and Safety of our personnel including our customers/subcontractors is a primary concern to us. We strive for full compliance with local, state and federal occupational health and safety requirements. We operate under a comprehensive safety program with a goal of ZERO ACCIDENTS.</p>
+        </div>
+    </div>
+
+    <!-- Environmental Protection Card -->
+    <div class="qs-card">
+        <div class="qs-img-col">
+            <div class="badge-env">
+                <i class="fas fa-leaf" style="font-size: 40px; margin-bottom: 10px;"></i>
+                <strong style="font-size: 14px; text-align: center; line-height: 1.2;">Eco<br>Friendly</strong>
+            </div>
+        </div>
+        <div class="qs-text-col">
+            <h2>Environmental Protection</h2>
+            <p>Our Company stresses protection of the environment and personnel at all times by adequate in house training. During construction, we clean the working area daily to dispose of excess materials and debris. We remove trash from the job site, dispose unwanted oil, soaked rags and waste by maintaining high quality of housekeeping. When construction is completed all excess materials are cleaned and removed from the project site.</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
